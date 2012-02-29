@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond $1 !^(index\.php|images|public|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [PT,L]
+
+RewriteCond %{HTTP_HOST} ^www\.goturnip\.com [NC]
+RewriteRule ^(.*)$ http://goturnip.com/$1 [L,R=301]
